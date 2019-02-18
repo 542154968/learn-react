@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import Header from './Head/'
+import Page from './Page/'
+import Time from './Time/'
+import List from './List/'
+// import Change from './Change/'
+// import Form from './Form/'
+// import Water from './Water/'
+// import logo from './logo.svg'
+// import './App.css'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <Router activeClassName="active">
+                <div>
+                    <Header />
+                    <Switch>
+                        <Redirect from="profile/:userId" to="about/:userId" />
+                        <Route path="/" exact component={Page} />
+                        <Route path="/time" component={Time} />
+                        <Route path="/list/:id" component={List} />
+                    </Switch>
+                </div>
+            </Router>
+        )
+    }
 }
 
-export default App;
+export default App
