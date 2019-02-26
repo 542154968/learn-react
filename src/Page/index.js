@@ -5,13 +5,22 @@ import { addTodo } from '../action.js'
 
 class Page extends Component {
     handleClick(e) {
-        this.props.dispatch(addTodo(e.target.innerText.trim()))
+        // 通过dispatch触发
+        this.props.dispatch(
+            addTodo(
+                `${e.target.innerText.trim()} ${new Date().toLocaleString()}`
+            )
+        )
+        console.log('添加成功！')
     }
 
     render() {
         return (
             <div>
-                <h1 onClick={this.handleClick.bind(this)}>Hello, world</h1>
+                <h1>Hello, world</h1>
+                <button onClick={this.handleClick.bind(this)}>
+                    添加一个todoList
+                </button>
                 <Child name="李乾坤" />
             </div>
         )

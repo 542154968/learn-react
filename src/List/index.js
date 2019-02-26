@@ -39,15 +39,24 @@ class List extends Component {
 
     render() {
         return (
-            <ul>
-                {this.state.dataList.map(v => (
-                    <li key={v.age} onClick={this.handleClick.bind(this, v)}>
-                        {v.name},{v.age}
-                    </li>
-                ))}
-                {this.props.todos &&
-                    this.props.todos.map(v => <li key={v.id}>{v.text}</li>)}
-            </ul>
+            <div>
+                <h2>组件内的state</h2>
+                <ul>
+                    {this.state.dataList.map(v => (
+                        <li
+                            key={v.age}
+                            onClick={this.handleClick.bind(this, v)}
+                        >
+                            {v.name},{v.age}
+                        </li>
+                    ))}
+                </ul>
+                <h2>通过redux传来的</h2>
+                <ul>
+                    {this.props.todos &&
+                        this.props.todos.map(v => <li key={v.id}>{v.text}</li>)}
+                </ul>
+            </div>
         )
     }
 }
