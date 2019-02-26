@@ -1,8 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+const mapStateToProps = state => {
+    return state
+}
 
 class List extends Component {
     constructor(props) {
         super(props)
+        console.log(this.props)
         this.state = {
             dataList: [
                 {
@@ -28,7 +34,7 @@ class List extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
+        // console.log(this.props)
     }
 
     render() {
@@ -39,9 +45,13 @@ class List extends Component {
                         {v.name},{v.age}
                     </li>
                 ))}
+                {this.props.todos &&
+                    this.props.todos.map(v => <li key={v.id}>{v.text}</li>)}
             </ul>
         )
     }
 }
+
+List = connect(mapStateToProps)(List)
 
 export default List

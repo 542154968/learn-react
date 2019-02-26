@@ -26,6 +26,11 @@ class Head extends Component {
                         <NavLink to="/list/666">List</NavLink>
                     </li>
                     <li>
+                        <a href="http://www.baidu.com" target="blank">
+                            outer
+                        </a>
+                    </li>
+                    <li>
                         <button onClick={this.handleClick.bind(this)}>
                             跳转测试
                         </button>
