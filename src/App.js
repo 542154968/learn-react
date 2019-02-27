@@ -6,6 +6,7 @@ import Header from './Head/'
 import Page from './Page/'
 import Time from './Time/'
 import List from './List/'
+import Hoc from './Hoc/'
 import reducer from './reducers/todos'
 // import Change from './Change/'
 // import Form from './Form/'
@@ -28,6 +29,7 @@ class App extends Component {
                             <Route path="/" exact component={Page} />
                             <Route path="/time" component={Time} />
                             <Route path="/list/:id" component={List} />
+                            <Route path="/hoc" component={Hoc} />
                         </Switch>
                     </div>
                 </Router>
