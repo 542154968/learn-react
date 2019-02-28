@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+// stylus
+import './assets/index.styl'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 

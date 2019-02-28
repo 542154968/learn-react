@@ -12,6 +12,8 @@ import Time from './Time/'
 import List from './List/'
 import Hoc from './Hoc/'
 import ErrorPage from './ErrorPage/'
+// stylus
+import './assets/index.styl'
 
 const store = createStore(reducer) //创建store
 class App extends Component {
@@ -25,7 +27,7 @@ class App extends Component {
                             <Route
                                 exact
                                 path="/login"
-                                render={() => <Redirect to={'/hoc'} />}
+                                render={() => <Redirect to={'/time'} />}
                             />
                             <Route path="/" exact component={Page} />
                             <Route path="/time" component={Time} />
