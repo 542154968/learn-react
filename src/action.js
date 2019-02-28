@@ -25,3 +25,11 @@ export function toggleTodo(listId) {
 export function setVisibilityFilter(filter) {
     return { type: 'SET_VISIBILITY_FILTER', filter }
 }
+
+export const addNum = () => {
+    return { type: 'ADD' }
+}
+
+export const minusNum = () => {
+    return { type: 'MINUS' }
+}

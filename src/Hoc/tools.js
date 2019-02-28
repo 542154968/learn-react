@@ -5,7 +5,12 @@ export default function hoc(ComponentClass) {
         constructor(props) {
             super(props)
             this.state = {
-                name: '我是hoc函数'
+                name: '我是hoc函数',
+                data: {
+                    age: 25,
+                    work: 'WEB',
+                    now: 'learn react'
+                }
             }
         }
         componentDidMount() {
@@ -13,7 +18,13 @@ export default function hoc(ComponentClass) {
         }
 
         render() {
-            return <ComponentClass name={this.state.name} {...this.props} />
+            return (
+                <ComponentClass
+                    name={this.state.name}
+                    data={this.state.data}
+                    {...this.props}
+                />
+            )
         }
     }
 }

@@ -50,9 +50,21 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
     }
 }
 
+const num = (state = 1, action) => {
+    switch (action.type) {
+        case 'ADD':
+            return state + 1
+        case 'MINUS':
+            return state - 1
+        default:
+            return state
+    }
+}
+
 const todoApp = combineReducers({
     todos, //默认此名称为key,此key是state中的key,此时会传递state.todos给todos函数，简单的说state key命名和函数名一致
-    visibilityFilter
+    visibilityFilter,
+    num
 })
 
 // 等价于

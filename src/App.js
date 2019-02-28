@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+// router
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+// redux
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import reducer from './reducers/todos'
+// 组件
 import Header from './Head/'
 import Page from './Page/'
 import Time from './Time/'
 import List from './List/'
 import Hoc from './Hoc/'
-import reducer from './reducers/todos'
-// import Change from './Change/'
-// import Form from './Form/'
-// import Water from './Water/'
-// import logo from './logo.svg'
-// import './App.css'
+import ErrorPage from './ErrorPage/'
+
 const store = createStore(reducer) //创建store
 class App extends Component {
     render() {
@@ -22,14 +22,11 @@ class App extends Component {
                     <div>
                         <Header />
                         <Switch>
-                            <Redirect
-                                from="profile/:userId"
-                                to="about/:userId"
-                            />
                             <Route path="/" exact component={Page} />
                             <Route path="/time" component={Time} />
                             <Route path="/list/:id" component={List} />
                             <Route path="/hoc" component={Hoc} />
+                            <Route component={ErrorPage} />
                         </Switch>
                     </div>
                 </Router>
