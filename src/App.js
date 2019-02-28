@@ -12,8 +12,6 @@ import Time from './Time/'
 import List from './List/'
 import Hoc from './Hoc/'
 import ErrorPage from './ErrorPage/'
-// stylus
-import './assets/index.styl'
 
 const store = createStore(reducer) //创建store
 class App extends Component {
